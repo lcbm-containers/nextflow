@@ -1,0 +1,15 @@
+name: Build NEXTFLOW Image
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-image:
+    uses: lcbm-containers/.workflows/.github/workflows/build-image.yml@main
+    secrets: inherit
